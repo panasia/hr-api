@@ -2,12 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage('Git Checkout') {
-            steps {
-                git branch: 'main', credentialsId: 'javahome', url: 'https://github.com/panasia/hr-api'
-            }
-        }
-           stage('Maven Build') {
+                 stage('Maven Build') {
             steps {
                 sh 'mvn clean package'
             }
